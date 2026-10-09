@@ -1,26 +1,81 @@
 @import "tailwindcss";
+@import "@heroui/styles"; 
+
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f5f0;
+  --foreground: #1d271f;
+
+  --surface: #fafcfa;
+  --surface-foreground: #1d271f;
+  --surface-secondary: #f0f5f0;
+  --overlay: #fafcfa;
+  --overlay-foreground: #1d271f;
+
+  --accent: #05893e;
+  --accent-foreground: #f3fbf4;
+
+  --success: #1a9951;
+  --danger: #d03739;
+  --danger-foreground: #fff6f5;
+
+  --border: #e1e8e1;
+  --separator: #e1e8e1;
+  --field-background: #fafcfa;
+  --field-foreground: #1d271f;
+  --field-border: #e1e8e1;
+  --field-border-width: 1px;
+  --muted: #5d6a5f;
+  --link: #05893e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-hind-siliguri);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-hind-siliguri), "Hind Siliguri", sans-serif;
+}
+
+
+
+
+#সব-পণ্য {
+  scroll-margin-top: 8rem;
+}
+
+
+
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 70s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation-duration: 240s;
+  }
 }
