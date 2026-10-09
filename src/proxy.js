@@ -1,0 +1,25 @@
+import { NextResponse } from "next/server";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
+
+
+export async function proxy(request) {
+
+    const session = await auth.api.getSession({
+        headers: await headers()
+    })
+
+    if (!session) {
+        return NextResponse.redirect(new URL("/signin?protected=true", request.url));
+    }
+
+    return NextResponse.next();
+}
+
+
+export const config = {
+    matcher: [
+        "/product/:path*",
+        "/profile/:path*"
+    ],
+};
