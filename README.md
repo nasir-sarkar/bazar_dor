@@ -8,6 +8,8 @@
 
 **বাজার দর (BazarDor)** is a grocery price tracker built for everyday shoppers in Bangladesh. It brings the daily prices of rice, lentils, oil, vegetables, fish, meat, eggs and spices into one clean, fast, Bangla-first interface. You can see what got more expensive today, what got cheaper, and how prices compare from one market to another, before you leave home.
 
+**Live Link:** https://bazardor-nasir.vercel.app/
+
 ## Technologies Used
 
 | Layer | Technology |
