@@ -18,7 +18,7 @@ async function request(path) {
     let lastError;
     for (const base of [BASE_URL_1, BASE_URL_2]) {
         try {
-            const res = await fetch(`${base}${path}`, { cache: "no-store" });
+            const res = await fetch(`${base}${path}`, { next: { revalidate: 3600 } });
             if (res.status === 404) return null;
             if (!res.ok) throw new Error(`Request failed: ${res.status}`);
             return await res.json();
